@@ -1,0 +1,19 @@
+version: "3.5"
+
+services:
+  app-a:
+    build:
+      context: ./app-a
+      dockerfile: ./Dockerfile
+    ports:
+      - "1338:1338"
+    volumes:
+      - ./app-a/conf.d:/etc/nginx/conf.d
+  app-b:
+    build:
+      context: ./app-b
+      dockerfile: ./Dockerfile
+    ports:
+      - "1339:1339"
+    volumes:
+      - ./app-b/conf.d:/etc/nginx/conf.d
